@@ -6,7 +6,7 @@
     <PackageTags>Bonsai Rx Starter Pack</PackageTags>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <TargetFramework>net472</TargetFramework>
-    <Version>2.5.0</Version>
+    <Version>3.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bonsai.Arduino\Bonsai.Arduino.csproj" />

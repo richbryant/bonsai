@@ -5,16 +5,16 @@
     <Description>An integrated development environment for the Bonsai visual programming language.</Description>
     <PackageTags>Bonsai Editor Rx Reactive Extensions</PackageTags>
     <UseWindowsForms>true</UseWindowsForms>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <TargetFramework>net472</TargetFramework>
-    <Version>2.5.0</Version>
+    <Version>3.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="**\*.svg" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Rx-PlatformServices" Version="2.2.5" />
-    <PackageReference Include="SvgNet" Version="2.0.1" />
+    <PackageReference Include="SvgNet" Version="2.0.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bonsai.Design\Bonsai.Design.csproj" />
