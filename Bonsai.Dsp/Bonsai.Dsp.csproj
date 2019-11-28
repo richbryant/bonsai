@@ -4,7 +4,7 @@
     <Title>Bonsai - Dsp Library</Title>
     <Description>Bonsai Dsp Library containing reactive algorithms for digital signal processing.</Description>
     <PackageTags>Bonsai Rx Dsp Signal Processing</PackageTags>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>net472;netstandard2.1</TargetFrameworks>
     <Version>3.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
