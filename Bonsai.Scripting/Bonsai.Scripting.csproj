@@ -8,8 +8,6 @@
     <Version>3.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IronPython" Version="2.7.9" />
-    <PackageReference Include="IronPython.StdLib" Version="2.7.9" />
     <PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
     <PackageReference Include="System.Linq.Dynamic" Version="1.0.7" />
   </ItemGroup>
