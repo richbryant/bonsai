@@ -37,7 +37,7 @@ namespace Bonsai.Scripting
         [Editor(DesignTypes.MultilineStringEditor, DesignTypes.UITypeEditor)]
         public string Description { get; set; }
 
-        [Editor("Bonsai.Scripting.ExpressionScriptEditor, Bonsai.Scripting", DesignTypes.UITypeEditor)]
+        [Editor("Bonsai.Scripting.Design.ExpressionScriptEditor, Bonsai.Scripting.Design", DesignTypes.UITypeEditor)]
         [Description("The expression that determines which elements to filter.")]
         public string Expression { get; set; }
 
@@ -45,7 +45,7 @@ namespace Bonsai.Scripting
         {
             var source = arguments.First();
             var sourceType = source.Type.GetGenericArguments()[0];
-            var predicate = global::System.Linq.Dynamic.DynamicExpression.ParseLambda(sourceType, typeof(bool), Expression);
+            var predicate = global::System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(sourceType, typeof(bool), Expression);
             return System.Linq.Expressions.Expression.Call(whereMethod.MakeGenericMethod(sourceType), source, predicate);
         }
 

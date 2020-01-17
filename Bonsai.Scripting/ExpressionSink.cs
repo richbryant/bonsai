@@ -32,7 +32,7 @@ namespace Bonsai.Scripting
         [Editor(DesignTypes.MultilineStringEditor, DesignTypes.UITypeEditor)]
         public string Description { get; set; }
         
-        [Editor("Bonsai.Scripting.ExpressionScriptEditor, Bonsai.Scripting", DesignTypes.UITypeEditor)]
+        [Editor("Bonsai.Scripting.Design.ExpressionScriptEditor, Bonsai.Scripting.Design", DesignTypes.UITypeEditor)]
         [Description("The expression that determines the action to perform on the input elements.")]
         public string Expression { get; set; }
 
@@ -45,7 +45,7 @@ namespace Bonsai.Scripting
                 var sourceType = source.Type.GetGenericArguments()[0];
                 var actionType = System.Linq.Expressions.Expression.GetActionType(sourceType);
                 var itParameter = new[] { System.Linq.Expressions.Expression.Parameter(sourceType, string.Empty) };
-                var onNext = global::System.Linq.Dynamic.DynamicExpression.ParseLambda(actionType, itParameter, null, Expression);
+                var onNext = global::System.Linq.Dynamic.Core.DynamicExpressionParser.ParseLambda(itParameter, typeof(void), Expression);
                 return System.Linq.Expressions.Expression.Call(doMethod.MakeGenericMethod(sourceType), source, onNext);
             }
             else return source;
